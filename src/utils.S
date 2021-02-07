@@ -1,4 +1,4 @@
-.globl get_el @ Exception level
+.globl get_el
 get_el:
     mrs x0, CurrentEL
     lsr x0, x0, #2
@@ -11,7 +11,7 @@ put32:
 
 .globl get32
 get32:
-    ldr w0, [xo]
+    ldr w0, [x0]
     ret
 
 .globl delay

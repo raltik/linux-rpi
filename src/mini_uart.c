@@ -1,3 +1,7 @@
+#include "peripherals/mini_uart.h"
+#include "utils.h"
+#include "peripherals/gpio.h"
+
 void uart_send(char c)
 {
 	while (1) {
@@ -28,7 +32,7 @@ void uart_init(void)
 	selector |= 2 << 12;		// Set ALT5 for GPIO_14
 	selector &= ~(7 << 15);     // Clean GPIO_15
 	selector |= 2 << 15;		// Set ALT5 for GPIO_15
-	put32(GPFSEL1);
+	put32(GPFSEL1, selector);
 
 	put32(GPPUD, 0);
 	delay(150);
