@@ -39,6 +39,38 @@ In this section, we will see the system registers which set and controls all the
 
 - **SCTLR_EL1** (System Control Register)
 
+	Provides top level control of the system, including its memory system, at `EL1` and `EL0`.
+	This register is mapped to AArch32 System Register in booth architectures(32 or 64).
+
+	First of all, the field bits that are marked as reserved (*RES1*) needs to be initialized with `1`, in the 	***ARMv8.0*** architecture those fields are the bits 29, 28, 23, 22, 20 and 11.
+	
+	In addition, we'll disable all the caches of the processor (instruction and data cache) and the memory 		management unit.
+	
+	So, we need to initialize the following fields:
+		
+	1. **EE**, bit 25
+		
+		Defines the endianess of explicit data acces at EL1. So, the processor is configured to work only with little-endian format.
+	
+	2. **E0E**, bit 24
+	
+		Defines the endianess of explicit data acces at EL0.
+		
+	3. **I**, bit 12
+	
+		Controls the instruction cache. We will disable this cache, i.e. '0'.
+		
+	4. **C**, bit 2
+		
+		Controls the data cache. We'll disable this cache too.
+	
+	5. **M**, bit 0
+		
+		Controls the MMU (*Memory Management Unit*) for EL1 and EL0.
+		
+		
+			
+
 
 
 
