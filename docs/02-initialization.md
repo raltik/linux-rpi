@@ -11,7 +11,7 @@ So, from least privileged to most privileged exception level:
 - **EL0**
 	
 	It only uses general purpose register (**x0 - x30**) and the stack pointer register (**SP**).
-	This level also allows using `STR` and `LDR` to store and load data from memory.
+	This level also allows using [`STR`](/docs/instructions.md) and [`LDR`](/docs/instructions.md) to store and load data from memory.
 	
 	The user process of the OS, uses this level because the user process should **NOT** be able to access other process's data.
 	So, in this level, a process can only use it's own virtual memory.
