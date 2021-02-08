@@ -14,3 +14,9 @@ Store data from a register into a address
 `STR X0, <addr>` *Store contents from X0 to addr*
 
 ---
+`SVC`
+
+Causes an exception. The processor mode changes to Supervisor, the `CPSR`(*Current Program Status Register*) is saved to the Supervisor mode `SPSR`(*Save Program Status Register*), and finally the execution branches (*jumps*) to the SVC vector.
+
+`SVC imm16`
+---
