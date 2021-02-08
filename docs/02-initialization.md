@@ -1,6 +1,6 @@
 # Processor Initialization
 
-### Exception Levels
+## Exception Levels
 
 The ARM v8 architecture has 4 exception levels. The exception level is a processor execution mode in which only a subset of operations and registers are available. 
 
