@@ -32,12 +32,13 @@ So, from least privileged to most privileged exception level:
 
 	Finally, this exception level is used for transitions from ARM `Secure world` to `Insecure world`. This level provides full hardware isolation between the software running in two different "worlds". [Security in ARMv8](https://developer.arm.com/documentation/100935/0100/)
 
----
 ## Switching to EL1
 
 In this section, we will see the system registers which set and controls all the exception levels of the processor.
 
 - **SCTLR_EL1** (System Control Register)
+
+	![SCTLR_EL1](/docs/images/sctlr_el1.png)
 
 	Provides top level control of the system, including its memory system, at `EL1` and `EL0`.
 	This register is mapped to AArch32 System Register in booth architectures(32 or 64).
