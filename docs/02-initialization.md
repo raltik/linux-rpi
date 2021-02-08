@@ -32,7 +32,7 @@ So, from least privileged to most privileged exception level:
 
 	Finally, this exception level is used for transitions from ARM `Secure world` to `Insecure world`. This level provides full hardware isolation between the software running in two different "worlds". [Security in ARMv8](https://developer.arm.com/documentation/100935/0100/)
 
-## Switching to EL1
+## Exception Levels Registers
 
 In this section, we will see the system registers which set and controls all the exception levels of the processor.
 
