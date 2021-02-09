@@ -21,3 +21,8 @@ Causes an exception. The processor mode changes to Supervisor, the `CPSR`(*Curre
 `SVC imm16`
 
 ---
+**MSR**
+
+Move to system coprocessor register from ARM register
+
+`MSR SCTLR_EL1, X0` *Moves the register x0 to the SCTLR_EL1 system register*
