@@ -36,7 +36,7 @@ So, from least privileged to most privileged exception level:
 
 In this section, we will see the system registers which set and controls all the exception levels of the processor.
 
-- **SCTLR_EL1** (System Control Register)
+- **SCTLR_EL1** (System Control Register, EL1)
 
 	![SCTLR_EL1](/docs/images/sctlr_el1.png)
 
@@ -69,9 +69,30 @@ In this section, we will see the system registers which set and controls all the
 		
 		Controls the MMU (*Memory Management Unit*) for EL1 and EL0.
 		
-		
-			
+- **HCR_EL2** (Hypervisor Configuration Register, EL2)
+	
+	Provides configuration controls for virtualization. 
+	This register is a 64-bit register.
 
+	This register it's only important in the virtualization cases. But, this register also controls the architecture that will be used (AArch64 or AArch32). So, to do this, the only field that interest to us is the field **RW**, bit 31.
 
+- **SCR_EL3** (Secure Configuration Register, EL3)
+	
+	This register is responsible for configuring security settings. 
+	Defines the configuration of the current Security state. It specifies the security state of EL0 and EL1, i.e. `Secure` or `Non-secure`.
+	
+	So, the fields that interest us are the field **RW**, bit 10 works like the previous register, and the field **NS**, bit 0 corresponding to `Non-secure` state ('1').
+	
+- **SPSR_EL3** (Saved Program Status Register, EL3)
+
+	Holds the saved process state when an exception is taken to EL3.
+	SPSR_EL3 is a 32-bit register.
+	Usually, this register is saved automatically when an exception is taken to EL3.
+	
+- **ELR_EL3** (Exception Link Register, EL3)
+	
+	When taking an exception to EL3, holds the address to return to.
+	The ELR_EL3 is a 64-bit register, which is the `return address`.
+	
 
 
